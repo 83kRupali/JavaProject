@@ -1,0 +1,40 @@
+create database bankmanagementsystem;
+
+show databases;
+
+use bankmanagementsystem;
+
+create table signup(formno varChar(20), name varChar(20), fathername varChar(20), dob varChar(20), gender varChar(20), email varChar(30), 
+marital_status varChar(20), address varChar(40), city varChar(25), state varChar(25), pinCode varChar(20));
+
+show tables;
+
+use bankmanagementsystem;
+
+create table signuptwo(formno varchar(20), Religion varchar(20), Category varchar(20),Income varchar(20), Education varchar(20), Occuption varchar(20), panNo varchar(20), AadharNo varchar(20),Seniorcitizen varchar(20), existingAccount varchar(20));
+
+show tables;
+
+select * from signuptwo;
+select * from signup;
+select * from signup;
+
+select name from signup;
+
+use bankmanagementsystem;
+
+create table signUpTree(formno varchar(20), accountType varchar(40), cardNumber varchar(25),  pinNumber varchar(10),facility varchar(100));
+
+create table login (formno varchar(20), cardNumber varchar(25), pinNumber varchar(10));
+
+select * from login;
+
+create table bank(pinNumber varchar(10), date varchar(20), type varchar(20), amount varchar(20));
+
+
+create table bank(pinNumber varchar(10), date varchar(50), type varchar(20), amount varchar(20));
+select * from bank;
+
+select * from signUpTree;
+
+select * from login
