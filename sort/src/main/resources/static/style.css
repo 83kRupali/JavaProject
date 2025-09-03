@@ -1,0 +1,153 @@
+:root {
+  --bg: #f7f7fb;
+  --card: #fff;
+  --bar: #0d9488;
+  --label: #334155;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: #111827;
+  margin: 18px;
+  text-align: center;
+}
+
+/* Controls (top bar) */
+.controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 12px auto;
+}
+
+.controls input[type="text"] {
+  width: 320px;
+  padding: 8px;
+}
+
+.controls select,
+.controls input[type="number"] {
+  padding: 6px;
+}
+
+.status {
+  margin-left: 10px;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+#liveSection,
+#historySection {
+  margin-top: 18px;
+}
+
+/* Live animation view */
+.live-view {
+  width: 90%;
+  max-width: 1000px;
+  margin: 16px auto;
+  height: 260px;
+  background: var(--card);
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 6px 16px rgba(2, 6, 23, 0.06);
+  overflow-x: auto;
+}
+
+/* History container as grid (2–3 per row) */
+.history-container {
+  margin: 16px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  align-items: start;
+  max-width: 100%;
+  padding: 16px;
+}
+
+/* Step card */
+.step-row {
+  display: flex;
+  flex-direction: column; /* label on top */
+  align-items: center;
+  padding: 14px 12px;
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.step-row:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+}
+
+/* Step label */
+.step-label {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--label);
+}
+
+/* Bars inside each step */
+.step-row > div {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+/* Bars */
+.bar {
+  width: 20px;
+  background: var(--bar);
+  border-radius: 3px 3px 0 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: white;
+  font-size: 11px;
+  padding-bottom: 4px;
+  box-sizing: border-box;
+  transition: height 0.25s ease, transform 0.2s ease;
+}
+
+.bar:hover {
+  transform: translateY(-4px);
+}
+
+/* Info */
+.info {
+  margin-bottom: 6px;
+  color: #334155;
+  font-weight: 600;
+}
+
+/* Small screens */
+@media (max-width: 520px) {
+  .bar {
+    width: 14px;
+    font-size: 10px;
+  }
+  .step-label {
+    min-width: 50px;
+    font-size: 12px;
+  }
+  .live-view {
+    height: 180px;
+  }
+}
+
+.hidden {
+  display: none;
+}
