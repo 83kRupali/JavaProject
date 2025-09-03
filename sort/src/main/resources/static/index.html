@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Sorting Visualizer — Live + History</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Sorting Visualizer</h1>
+
+  <div class="controls">
+    <input id="arrayInput" type="text" placeholder="Enter numbers, e.g. 5,3,8,1,4" />
+    <select id="algorithm">
+      <option value="bubble">Bubble Sort</option>
+      <option value="insertion">Insertion Sort</option>
+      <option value="selection">Selection Sort</option>
+      <option value="merge">Merge Sort</option>
+      <option value="quick">Quick Sort</option>
+    </select>
+
+
+    <label>Delay (ms)
+      <input id="delay" type="number" value="250" min="10" step="10" />
+    </label>
+
+    <button id="sortBtn">Sort</button>
+    <span id="status" class="status"></span>
+  </div>
+
+  <section id="liveSection">
+    <h2>Live Animation</h2>
+    <div id="liveInfo" class="info">—</div>
+    <div id="liveView" class="live-view"></div>
+  </section>
+
+  <section id="historySection" class="hidden">
+    <h2>All Steps (History)</h2>
+    <div id="historyContainer" class="history-container"></div>
+  </section>
+
+ 
+  <script src="script.js"></script>
+
+</body>
+</html>
